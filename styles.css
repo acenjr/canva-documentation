@@ -1,0 +1,65 @@
+fieldset{
+    width: fit-content;
+    margin: auto;
+   
+}
+
+
+
+code{
+    background-color: rgb(173, 179, 179);
+    padding: 15px 150px;
+    
+    width: 10px;
+}
+
+legend{
+    font-weight: bold;
+ 
+}
+
+#navbar{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: fit-content;
+    border-right: 5px solid grey;
+    border-bottom: 1px solid grey;
+    overflow-x: auto;
+    overflow-y: auto;
+    justify-content: left;
+    flex-wrap: wrap;
+    position: fixed;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   
+}
+
+.nav-link, h2{
+    padding: 10px;
+    border-bottom: 1px solid black;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+#main-doc{
+    margin: auto 200px ;
+    flex: 1;
+}
+
+#calling-card{
+    flex: none;
+    margin-top: auto;
+}
+
+@media screen and (max-width: 600px) {
+    .navbar {
+        position: relative;
+        width: 100%;

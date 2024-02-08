@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Canva API Technical Documentation</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <nav id="navbar">
+      <header><h2>Key Features</h2></header>
+      <a class="nav-link" href="#introduction">Introduction</a>
+      <a class="nav-link" href="#user-profile">User Profile</a>
+      <a class="nav-link" href="#design-operations">Design Operations</a>
+      <a class="nav-link" href="#template-operations">Template Operations</a>
+      <a class="nav-link" href="#export-and-download">Export and Download</a>
+      <a class="nav-link" href="#error-handling">Error Handling</a>
+      <div id="calling-card">
+        <hr />
+
+        &lt;&lt;&lt;&copy;kelvin Njeru &gt;&gt;&gt;
+      </div>
+    </nav>
+    <main id="main-doc">
+      <section class="main-section" id="introduction">
+        <header><h1>Introduction</h1></header>
+        <p>
+          Welcome to the Canva API Technical Documentation. This documentation
+          is designed to provide developers with the information needed to
+          integrate their applications with Canva, a powerful graphic design
+          platform. The Canva API allows developers to create and manage designs
+          programmatically, providing access to a wide range of design tools and
+          features.
+        </p>
+        <h3>Prerequisites</h3>
+        <p>To use the Canva API, you need the following:</p>
+        <ol>
+          <li>
+            <p>
+              Canva Developer Account: Create an account on the Canva Developer
+              Portal to obtain API credentials.
+            </p>
+          </li>
+          <li>
+            <p>
+              API Key and Secret: Generate API key and secret from the Developer
+              Portal.
+            </p>
+          </li>
+          <li>
+            <p>
+              Authentication: All API requests must be authenticated using OAuth
+              2.0.
+            </p>
+          </li>
+        </ol>
+        <fieldset>
+          <a
+            href="https://api.canva.com/ "
+            target="_blank"
+            rel="noopener noreferrer"
+            >Base URL for Canva API</a
+          >
+        </fieldset>
+        <div>
+          <h3>Authentication</h3>
+          <p>
+            All requests to the Canva API must be authenticated using OAuth 2.0.
+            You need to include an <strong> 'Authorization'</strong> header in
+            your HTTP requests with the value
+            <strong>'Bearer YOUR_ACCESS_TOKEN'</strong>.
+          </p>
+        </div>
+        <fieldset>
+          <p>
+            To obtain an access token, follow the OAuth 2.0 authentication
+            process outlined in the
+            <a
+              href="https://www.canva.dev/docs/apps/authenticating-users/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Canva API Authentication Guide.</a
+            >
+          </p>
+        </fieldset>
+      </section>
+      <br />
+      <br />
+      <div>
+        <h1>API Endpoints</h1>
+        <section class="main-section" id="user-profile">
+          <header><h3>User profile</h3></header>
+          <ol>
+            <li>
+              To get User Profile;
+              <p><code>GET /v1/me </code></p>
+              <p>This returns the details of the authenticated user.</p>
+            </li>
+            <li>
+              <p>To update User Profile;</p>
+              <code>PUT /v1/me </code>
+              <p>This updates the authenticated user's profile information..</p>
+            </li>
+          </ol>
+        </section>
+
+        <br />
+
+        <section class="main-section" id="design-operations">
+          <header><h3>Design Operations</h3></header>
+          <ol>
+            <li>
+              <p>To create a Design:</p>
+              <code>POST /v1/designs </code>
+              <p>This will create a new design with specified parameters.</p>
+            </li>
+            <li>
+              <p>To get design details:</p>
+              <code>GET /v1/designs/:designId </code>
+              <p>This will retrieve details about a specific design.</p>
+            </li>
+            <li>
+              <p>To update design:</p>
+              <code>PUT /v1/designs/:designId </code>
+              <p>This will Update the content or settings of a design.</p>
+            </li>
+            <li>
+              <p>To get delete design:</p>
+              <code>DELETE /v1/designs/:designId </code>
+              <p>This will delete a design by its ID.</p>
+            </li>
+          </ol>
+        </section>
+
+        <br />
+
+        <section class="main-section" id="template-operations">
+          <header><h3>Template Operations</h3></header>
+          <ol>
+            <li>
+              <p>To get templates:</p>
+              <p><code>GET /v1/templates </code></p>
+              <p>This retrieves a list of available templates.</p>
+            </li>
+            <li>
+              <p>To get template details:</p>
+              <code>GET /v1/templates/:templateId </code>
+              <p>This gets details about a specific template.</p>
+            </li>
+          </ol>
+        </section>
+        <br />
+        <section class="main-section" id="export-and-download">
+          <header><h3>Export and Download</h3></header>
+          <ol>
+            <li>
+              <p>To export design:</p>
+              <code>POST /v1/designs/:designId/export </code>
+              <p>
+                This will export a design in different formats (PDF, PNG, etc.).
+              </p>
+            </li>
+            <li>
+              <p>To download a design:</p>
+              <code>GET /v1/designs/:designId/download </code>
+              <p>This will download the design file.</p>
+            </li>
+          </ol>
+        </section>
+        <br />
+      </div>
+      <br />
+      <div>
+        <fieldset>
+          <legend>Rate Limiting</legend>
+          <p>
+            Canva API has rate limiting to ensure fair usage. Refer to the
+            <a
+              href="https://www.canva.dev/docs/extensions/server-api/server-api/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Rate Limiting Guide for details.</a
+            >
+          </p>
+        </fieldset>
+        <br />
+        <section class="sub-section" id="error-handling" name="error-handling">
+          <h3>Error handling</h3>
+          <p>
+            If an error occurs, the API responds with an appropriate HTTP status
+            code and a JSON object containing details about the error.
+          </p>
+
+          <code>
+            { "error": { "code": "400", "message": "Invalid request", "details":
+            "Additional error details" } }
+          </code>
+        </section>
+        <br />
+        <br />
+        <section>
+          <h3>Conclusion</h3>
+          <p>
+            Congratulations! You've now been introduced to the Canva API.
+            Explore the capabilities of the API and start integrating Canva into
+            your applications for a seamless graphic design experience. For more
+            detailed information, refer to the Canva API Documentation.
+          </p>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
